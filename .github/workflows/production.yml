@@ -1,5 +1,6 @@
 name: Vercel Deployment
 env:
+  environment: Production
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
@@ -8,6 +9,7 @@ on:
       - main
 jobs:
   deploy-production:
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
